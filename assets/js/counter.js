@@ -1,12 +1,13 @@
 /*==========================================================
-    COUNTER JS
+    COUNTER JS (SAFE VERSION)
 ==========================================================*/
 
 document.addEventListener("DOMContentLoaded", () => {
 
     const counters = document.querySelectorAll(".counter");
+    const section = document.querySelector(".statistics");
 
-    if (!counters.length) return;
+    if (!counters.length || !section) return;
 
     let started = false;
 
@@ -14,52 +15,37 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (started) return;
 
-        const section = document.querySelector(".statistics");
+        const rect = section.getBoundingClientRect();
 
-        if (!section) return;
-
-        const trigger = section.getBoundingClientRect().top;
-
-        if (trigger < window.innerHeight - 100) {
+        if (rect.top < window.innerHeight - 100) {
 
             started = true;
 
             counters.forEach(counter => {
 
-                const target = +counter.getAttribute("data-target");
-
+                const target = parseInt(counter.getAttribute("data-target")) || 0;
                 const speed = 200;
+                let count = 0;
 
-                const updateCounter = () => {
-
-                    const count = +counter.innerText;
+                function updateCounter() {
 
                     const increment = Math.ceil(target / speed);
+                    count += increment;
 
                     if (count < target) {
-
-                        counter.innerText = count + increment;
-
+                        counter.innerText = count;
                         requestAnimationFrame(updateCounter);
-
                     } else {
-
                         counter.innerText = target;
-
                     }
-
-                };
+                }
 
                 updateCounter();
-
             });
-
         }
-
     }
 
-    window.addEventListener("scroll", startCounter);
+    window.addEventListener("scroll", startCounter, { passive: true });
 
     startCounter();
-
 });

@@ -1,13 +1,11 @@
 /*==========================================================
-    MENU JS
+    MENU JS (SAFE VERSION)
 ==========================================================*/
 
 document.addEventListener("DOMContentLoaded", () => {
 
     const navbar = document.querySelector(".navbar");
-
     const navbarCollapse = document.querySelector(".navbar-collapse");
-
     const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
 
     /*=====================================
@@ -16,20 +14,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function navbarScroll() {
 
+        if (!navbar) return;
+
         if (window.scrollY > 80) {
-
             navbar.classList.add("navbar-scrolled");
-
         } else {
-
             navbar.classList.remove("navbar-scrolled");
-
         }
 
     }
 
     navbarScroll();
-
     window.addEventListener("scroll", navbarScroll);
 
     /*=====================================
@@ -40,10 +35,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
         link.addEventListener("click", () => {
 
-            if (navbarCollapse.classList.contains("show")) {
+            if (navbarCollapse && navbarCollapse.classList.contains("show")) {
 
-                bootstrap.Collapse.getInstance(navbarCollapse).hide();
+                const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
 
+                if (bsCollapse) {
+                    bsCollapse.hide();
+                }
             }
 
         });
@@ -61,13 +59,10 @@ document.addEventListener("DOMContentLoaded", () => {
         document.querySelectorAll("section").forEach(section => {
 
             const top = section.offsetTop - 120;
-
             const height = section.offsetHeight;
 
-            if (scrollY >= top && scrollY < top + height) {
-
+            if (window.scrollY >= top && window.scrollY < top + height) {
                 current = section.id;
-
             }
 
         });
@@ -77,9 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
             link.classList.remove("active");
 
             if (link.getAttribute("href") === "#" + current) {
-
                 link.classList.add("active");
-
             }
 
         });

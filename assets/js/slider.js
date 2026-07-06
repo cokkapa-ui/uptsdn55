@@ -1,23 +1,19 @@
 /*==========================================================
-    SLIDER JS
+    SLIDER JS (SAFE VERSION)
 ==========================================================*/
 
 document.addEventListener("DOMContentLoaded", () => {
 
     const heroSlider = document.querySelector("#heroSlider");
 
-    if (!heroSlider) return;
+    if (!heroSlider || typeof bootstrap === "undefined") return;
 
     const carousel = new bootstrap.Carousel(heroSlider, {
 
         interval: 5000,
-
         ride: "carousel",
-
         pause: false,
-
         touch: true,
-
         wrap: true
 
     });
@@ -27,15 +23,11 @@ document.addEventListener("DOMContentLoaded", () => {
     =====================================*/
 
     heroSlider.addEventListener("mouseenter", () => {
-
         carousel.pause();
-
     });
 
     heroSlider.addEventListener("mouseleave", () => {
-
         carousel.cycle();
-
     });
 
     /*=====================================
@@ -44,14 +36,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     heroSlider.addEventListener("slide.bs.carousel", () => {
 
-        const captions = heroSlider.querySelectorAll(".carousel-caption");
-
-        captions.forEach(caption => {
-
+        heroSlider.querySelectorAll(".carousel-caption").forEach(caption => {
             caption.style.opacity = "0";
-
             caption.style.transform = "translateY(40px)";
-
         });
 
     });
@@ -63,9 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (activeCaption) {
 
             activeCaption.style.transition = "all .7s ease";
-
             activeCaption.style.opacity = "1";
-
             activeCaption.style.transform = "translateY(0)";
 
         }

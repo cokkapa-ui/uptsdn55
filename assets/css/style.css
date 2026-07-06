@@ -1644,3 +1644,10 @@ button,
     color:#ffffff;
 
 }
+
+.hide {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: all .4s ease;
+}

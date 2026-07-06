@@ -1,14 +1,14 @@
 /*==========================================================
-    APP JS
+    APP JS (FIXED)
 ==========================================================*/
 
 document.addEventListener("DOMContentLoaded", () => {
 
     /*=====================================
-        PRELOADER
+        LOADER / PRELOADER FIX
     =====================================*/
 
-    const preloader = document.querySelector(".preloader");
+    const preloader = document.getElementById("loader");
 
     if (preloader) {
 
@@ -17,9 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
             preloader.classList.add("hide");
 
             setTimeout(() => {
-
                 preloader.remove();
-
             }, 500);
 
         });
@@ -32,19 +30,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const header = document.querySelector(".navbar");
 
-    window.addEventListener("scroll", () => {
+    if (header) {
+        window.addEventListener("scroll", () => {
 
-        if (window.scrollY > 80) {
+            if (window.scrollY > 80) {
+                header.classList.add("navbar-scrolled");
+            } else {
+                header.classList.remove("navbar-scrolled");
+            }
 
-            header.classList.add("navbar-scrolled");
-
-        } else {
-
-            header.classList.remove("navbar-scrolled");
-
-        }
-
-    });
+        });
+    }
 
     /*=====================================
         SMOOTH SCROLL
@@ -61,11 +57,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 e.preventDefault();
 
                 target.scrollIntoView({
-
                     behavior: "smooth",
-
                     block: "start"
-
                 });
 
             }
@@ -79,7 +72,6 @@ document.addEventListener("DOMContentLoaded", () => {
     =====================================*/
 
     const sections = document.querySelectorAll("section");
-
     const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
 
     window.addEventListener("scroll", () => {
@@ -91,9 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const sectionTop = section.offsetTop - 120;
 
             if (window.scrollY >= sectionTop) {
-
                 current = section.getAttribute("id");
-
             }
 
         });
@@ -103,9 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
             link.classList.remove("active");
 
             if (link.getAttribute("href") === "#" + current) {
-
                 link.classList.add("active");
-
             }
 
         });

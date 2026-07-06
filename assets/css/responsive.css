@@ -16,23 +16,17 @@
 
     }
 
-    .logo img{
+    .logo-sekolah{
+    width:60px;
+}
 
-        width:60px;
+.brand-text h1{
+    font-size:30px;
+}
 
-    }
-
-    .logo-text h1{
-
-        font-size:30px;
-
-    }
-
-    .logo-text p{
-
-        font-size:15px;
-
-    }
+.brand-text p{
+    font-size:15px;
+}
 
     .navbar{
 
@@ -94,31 +88,23 @@
 
     }
 
-    .logo{
+    .header-brand{
+    justify-content:center;
+    flex-direction:column;
+    gap:10px;
+}
 
-        justify-content:center;
+.logo-sekolah{
+    width:55px;
+}
 
-        margin-bottom:20px;
+.brand-text h1{
+    font-size:26px;
+}
 
-    }
-
-    .logo img{
-
-        width:55px;
-
-    }
-
-    .logo-text h1{
-
-        font-size:26px;
-
-    }
-
-    .logo-text p{
-
-        font-size:14px;
-
-    }
+.brand-text p{
+    font-size:14px;
+}
 
     .navbar-nav{
 
@@ -246,23 +232,17 @@
 
 @media (max-width:480px){
 
-    .logo img{
+.logo-sekolah{
+    width:48px;
+}
 
-        width:48px;
+.brand-text h1{
+    font-size:22px;
+}
 
-    }
-
-    .logo-text h1{
-
-        font-size:22px;
-
-    }
-
-    .logo-text p{
-
-        font-size:13px;
-
-    }
+.brand-text p{
+    font-size:13px;
+}
 
     .carousel-caption{
 
