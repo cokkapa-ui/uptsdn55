@@ -67,9 +67,9 @@
 
 <body>
 
-<!-- ========================================= -->
-<!-- TOPBAR -->
-<!-- ========================================= -->
+<!-- =======================================================
+TOPBAR
+======================================================= -->
 
 <div class="topbar">
 
@@ -77,51 +77,33 @@
 
         <div class="row align-items-center">
 
-            <div class="col-lg-6">
+            <div class="col-lg-8">
 
-                <div class="top-left">
+                <ul class="top-contact">
 
-                    <span>
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        Sekkang, Desa Massulowalie, Kec. Mattiro Sompe
+                    </li>
 
-                        <i class="bi bi-envelope-fill"></i>
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        info@uptsdn55.sch.id
+                    </li>
 
-                        info@sd53pinrang.sch.id
-
-                    </span>
-
-                    <span>
-
-                        <i class="bi bi-telephone-fill"></i>
-
-                        (0421) 000000
-
-                    </span>
-
-                </div>
+                </ul>
 
             </div>
 
-            <div class="col-lg-6 text-end">
+            <div class="col-lg-4 text-end">
 
-                <div class="top-right">
+                <div class="top-social">
 
-                    <a href="#">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
 
-                        <i class="fab fa-facebook-f"></i>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
 
-                    </a>
-
-                    <a href="#">
-
-                        <i class="fab fa-instagram"></i>
-
-                    </a>
-
-                    <a href="#">
-
-                        <i class="fab fa-youtube"></i>
-
-                    </a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
 
                 </div>
 
@@ -133,37 +115,40 @@
 
 </div>
 
-<!-- ========================================= -->
-<!-- HEADER -->
-<!-- ========================================= -->
+<!-- =======================================================
+HEADER
+======================================================= -->
 
 <header class="header">
 
     <div class="container">
 
-        <div class="header-content">
+        <div class="header-wrapper">
 
-            <div class="logo">
+            <div class="logo-area">
 
                 <img
-                    src="assets/images/logo.png"
-                    alt="Logo Sekolah">
+                    src="assets/img/logo.png"
+                    alt="UPT SDN 55 PINRANG">
+
+                <div class="school-title">
+
+                    <h1>UPT SDN 55 PINRANG</h1>
+
+                    <span>
+                        Unggul • Berkarakter • Berprestasi
+                    </span>
+
+                </div>
 
             </div>
 
-            <div class="title">
+            <div class="header-right">
 
-                <h1>
-
-                    UPT SD Negeri 53 Pinrang
-
-                </h1>
-
-                <p>
-
-                    Unggul • Berkarakter • Berprestasi
-
-                </p>
+                <img
+                    src="assets/img/logo-pinrang.png"
+                    class="logo-kabupaten"
+                    alt="Kabupaten Pinrang">
 
             </div>
 
@@ -173,19 +158,17 @@
 
 </header>
 
-<!-- ========================================= -->
-<!-- NAVBAR -->
-<!-- ========================================= -->
+<!-- =======================================================
+NAVBAR
+======================================================= -->
 
-<nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+<nav class="navbar navbar-expand-lg navbar-light shadow-sm sticky-top">
 
     <div class="container">
 
-        <a
-            class="navbar-brand fw-bold"
-            href="#">
+        <a class="navbar-brand d-lg-none" href="#">
 
-            SD53
+            UPT SDN 55
 
         </a>
 
@@ -203,143 +186,40 @@
             class="collapse navbar-collapse"
             id="mainMenu">
 
-            <ul class="navbar-nav ms-auto">
+            <ul class="navbar-nav mx-auto">
 
                 <li class="nav-item">
-
-                    <a
-                        class="nav-link active"
-                        href="#">
-
-                        Beranda
-
-                    </a>
-
+                    <a class="nav-link active" href="#">Beranda</a>
                 </li>
 
                 <li class="nav-item">
-
-                    <a
-                        class="nav-link"
-                        href="#profil">
-
+                    <a class="nav-link" href="#profil">
                         Profil
-
                     </a>
-
-                </li>
-
-                <li class="nav-item dropdown">
-
-                    <a
-                        class="nav-link dropdown-toggle"
-                        href="#"
-                        data-bs-toggle="dropdown">
-
-                        Tentang
-
-                    </a>
-
-                    <ul class="dropdown-menu">
-
-                        <li>
-
-                            <a
-                                class="dropdown-item"
-                                href="#sambutan">
-
-                                Sambutan Kepala Sekolah
-
-                            </a>
-
-                        </li>
-
-                        <li>
-
-                            <a
-                                class="dropdown-item"
-                                href="#visi">
-
-                                Visi & Misi
-
-                            </a>
-
-                        </li>
-
-                        <li>
-
-                            <a
-                                class="dropdown-item"
-                                href="#guru">
-
-                                Guru & Tendik
-
-                            </a>
-
-                        </li>
-
-                    </ul>
-
                 </li>
 
                 <li class="nav-item">
+                    <a class="nav-link" href="#guru">
+                        Guru
+                    </a>
+                </li>
 
-                    <a
-                        class="nav-link"
-                        href="#berita">
-
+                <li class="nav-item">
+                    <a class="nav-link" href="#berita">
                         Berita
-
                     </a>
-
                 </li>
 
                 <li class="nav-item">
-
-                    <a
-                        class="nav-link"
-                        href="#galeri">
-
+                    <a class="nav-link" href="#galeri">
                         Galeri
-
                     </a>
-
                 </li>
 
                 <li class="nav-item">
-
-                    <a
-                        class="nav-link"
-                        href="#prestasi">
-
-                        Prestasi
-
-                    </a>
-
-                </li>
-
-                <li class="nav-item">
-
-                    <a
-                        class="nav-link"
-                        href="#ppdb">
-
-                        PPDB
-
-                    </a>
-
-                </li>
-
-                <li class="nav-item">
-
-                    <a
-                        class="nav-link"
-                        href="#kontak">
-
+                    <a class="nav-link" href="#kontak">
                         Kontak
-
                     </a>
-
                 </li>
 
             </ul>
@@ -350,12 +230,12 @@
 
 </nav>
 
-<!-- ========================================= -->
-<!-- HERO -->
-<!-- ========================================= -->
+<!-- =======================================================
+HERO
+======================================================= -->
 
-<section class="hero">
-
+<section class="hero">            
+          
     <div
         id="heroSlider"
         class="carousel slide carousel-fade"
@@ -363,6 +243,7 @@
 
         <div class="carousel-inner">
 
+            <!-- Slide 1 -->
             <div class="carousel-item active">
 
                 <img
@@ -373,19 +254,14 @@
                 <div class="carousel-caption">
 
                     <h1>
-
                         Selamat Datang di
                         <br>
-                        UPT SD Negeri 53 Pinrang
-
+                        UPT SDN 55 PINRANG
                     </h1>
 
                     <p>
-
                         Sekolah yang membentuk generasi
-                        unggul, berkarakter,
-                        dan berprestasi.
-
+                        unggul, berkarakter, dan berprestasi.
                     </p>
 
                     <a
@@ -400,6 +276,7 @@
 
             </div>
 
+            <!-- Slide 2 -->
             <div class="carousel-item">
 
                 <img
@@ -410,18 +287,14 @@
                 <div class="carousel-caption">
 
                     <h1>
-
                         Pendidikan Berkualitas
                         Untuk Masa Depan
-
                     </h1>
 
                     <p>
-
                         Mewujudkan peserta didik yang
                         cerdas, kreatif,
                         dan berakhlak mulia.
-
                     </p>
 
                     <a
@@ -436,6 +309,7 @@
 
             </div>
 
+            <!-- Slide 3 -->
             <div class="carousel-item">
 
                 <img
@@ -446,17 +320,12 @@
                 <div class="carousel-caption">
 
                     <h1>
-
                         Bersama Membangun
                         Pendidikan Indonesia
-
                     </h1>
 
                     <p>
-
-                        Belajar, Berkarya,
-                        Berprestasi.
-
+                        Belajar, Berkarya, Berprestasi.
                     </p>
 
                     <a
@@ -495,7 +364,9 @@
 
     </div>
 
-    <!-- ========================================= -->
+</section>
+
+<!-- ========================================= -->
 <!-- QUICK MENU -->
 <!-- ========================================= -->
 
@@ -531,7 +402,7 @@
 
                     <h5>Guru & Tendik</h5>
 
-                    <p>Data tenaga pendidik.</p>
+                    <p>Data Guru dan Tenaga Kependidikan.</p>
 
                 </a>
 
@@ -555,15 +426,15 @@
 
             <div class="col-md-6 col-lg-3">
 
-                <a href="#spmb" class="quick-card">
+                <a href="#kontak" class="quick-card">
 
                     <div class="quick-icon">
-                        <i class="fas fa-user-graduate"></i>
+                        <i class="fas fa-phone-alt"></i>
                     </div>
 
-                    <h5>SPMB</h5>
+                    <h5>Kontak</h5>
 
-                    <p>Pendaftaran murid baru.</p>
+                    <p>Hubungi pihak sekolah.</p>
 
                 </a>
 
@@ -572,8 +443,6 @@
         </div>
 
     </div>
-
-</section>
 
 </section>
 

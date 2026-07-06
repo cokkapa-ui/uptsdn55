@@ -1928,3 +1928,205 @@ section:nth-child(odd){
     font-size:15px;
 
 }
+/* =====================================================
+TOPBAR
+===================================================== */
+
+.topbar{
+    background:#0f4c81;
+    color:#fff;
+    font-size:14px;
+    padding:8px 0;
+}
+
+.top-contact{
+    display:flex;
+    gap:20px;
+    list-style:none;
+    margin:0;
+    padding:0;
+    align-items:center;
+}
+
+.top-contact li{
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+.top-social a{
+    color:#fff;
+    margin-left:15px;
+    font-size:16px;
+    transition:.3s;
+}
+
+.top-social a:hover{
+    color:#ffd43b;
+}
+
+
+/* =====================================================
+HEADER
+===================================================== */
+
+.header{
+
+    background:#ffffff;
+
+    padding:20px 0;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.05);
+
+}
+
+.header-wrapper{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+.logo-area{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+}
+
+.logo-area img{
+
+    width:90px;
+
+}
+
+.school-title h1{
+
+    font-size:34px;
+
+    margin:0;
+
+    font-weight:700;
+
+    color:#0f4c81;
+
+}
+
+.school-title span{
+
+    color:#666;
+
+    font-size:18px;
+
+}
+
+.logo-kabupaten{
+
+    width:70px;
+
+}
+
+
+/* =====================================================
+NAVBAR
+===================================================== */
+
+.navbar{
+
+    background:#ffffff;
+
+}
+
+.navbar-nav{
+
+    gap:20px;
+
+}
+
+.nav-link{
+
+    font-weight:600;
+
+    color:#333 !important;
+
+    transition:.3s;
+
+}
+
+.nav-link:hover{
+
+    color:#0f4c81 !important;
+
+}
+
+.nav-link.active{
+
+    color:#0f4c81 !important;
+
+}
+
+/* =====================================================
+RESPONSIVE HEADER
+===================================================== */
+
+@media(max-width:991px){
+
+.header-wrapper{
+
+flex-direction:column;
+
+text-align:center;
+
+gap:15px;
+
+}
+
+.logo-area{
+
+flex-direction:column;
+
+}
+
+.top-contact{
+
+display:block;
+
+text-align:center;
+
+}
+
+.top-contact li{
+
+justify-content:center;
+
+margin-bottom:8px;
+
+}
+
+.top-social{
+
+margin-top:10px;
+
+text-align:center;
+
+}
+
+.school-title h1{
+
+font-size:28px;
+
+}
+
+.school-title span{
+
+font-size:15px;
+
+}
+
+}
