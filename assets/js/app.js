@@ -101,3 +101,21 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
+
+const loader = document.getElementById("loader");
+
+function hideLoader() {
+    if (!loader) return;
+
+    loader.classList.add("hide");
+
+    setTimeout(() => {
+        loader.style.display = "none";
+    }, 400);
+}
+
+if (document.readyState === "complete") {
+    hideLoader();
+} else {
+    window.addEventListener("load", hideLoader);
+}
