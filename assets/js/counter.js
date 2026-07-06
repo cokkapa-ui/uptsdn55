@@ -1,7 +1,6 @@
-/**
- * Counter Animation
- * assets/js/counter.js
- */
+/*==========================================================
+    COUNTER JS
+==========================================================*/
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -9,50 +8,58 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!counters.length) return;
 
-    const speed = 200;
+    let started = false;
 
-    const startCounter = (counter) => {
+    function startCounter() {
 
-        const target = parseInt(counter.dataset.target);
-        let count = 0;
+        if (started) return;
 
-        const update = () => {
+        const section = document.querySelector(".statistics");
 
-            const increment = Math.ceil(target / speed);
+        if (!section) return;
 
-            count += increment;
+        const trigger = section.getBoundingClientRect().top;
 
-            if (count >= target) {
-                counter.innerText = target.toLocaleString("id-ID");
-            } else {
-                counter.innerText = count.toLocaleString("id-ID");
-                requestAnimationFrame(update);
-            }
+        if (trigger < window.innerHeight - 100) {
 
-        };
+            started = true;
 
-        update();
+            counters.forEach(counter => {
 
-    };
+                const target = +counter.getAttribute("data-target");
 
-    const observer = new IntersectionObserver((entries, observer) => {
+                const speed = 200;
 
-        entries.forEach(entry => {
+                const updateCounter = () => {
 
-            if (entry.isIntersecting) {
+                    const count = +counter.innerText;
 
-                startCounter(entry.target);
+                    const increment = Math.ceil(target / speed);
 
-                observer.unobserve(entry.target);
+                    if (count < target) {
 
-            }
+                        counter.innerText = count + increment;
 
-        });
+                        requestAnimationFrame(updateCounter);
 
-    }, {
-        threshold: 0.5
-    });
+                    } else {
 
-    counters.forEach(counter => observer.observe(counter));
+                        counter.innerText = target;
+
+                    }
+
+                };
+
+                updateCounter();
+
+            });
+
+        }
+
+    }
+
+    window.addEventListener("scroll", startCounter);
+
+    startCounter();
 
 });

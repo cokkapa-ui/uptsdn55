@@ -1,35 +1,20 @@
-/*
-==========================================================
-UPT SD Negeri 53 Pinrang
-assets/js/slider.js
-==========================================================
-*/
+/*==========================================================
+    SLIDER JS
+==========================================================*/
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    initHeroSlider();
+    const heroSlider = document.querySelector("#heroSlider");
 
-    initHeroAnimation();
+    if (!heroSlider) return;
 
-});
-
-/* ==========================================
-   HERO SLIDER
-========================================== */
-
-function initHeroSlider() {
-
-    const hero = document.querySelector("#heroCarousel");
-
-    if (!hero) return;
-
-    new bootstrap.Carousel(hero, {
+    const carousel = new bootstrap.Carousel(heroSlider, {
 
         interval: 5000,
 
         ride: "carousel",
 
-        pause: "hover",
+        pause: false,
 
         touch: true,
 
@@ -37,168 +22,54 @@ function initHeroSlider() {
 
     });
 
-}
-
-/* ==========================================
-   HERO CONTENT ANIMATION
-========================================== */
-
-function initHeroAnimation() {
-
-    const hero = document.querySelector("#heroCarousel");
-
-    if (!hero) return;
-
-    hero.addEventListener("slide.bs.carousel", () => {
-
-        resetAnimation();
-
-    });
-
-    hero.addEventListener("slid.bs.carousel", () => {
-
-        playAnimation();
-
-    });
-
-    playAnimation();
-
-}
-
-function playAnimation() {
-
-    const active = document.querySelector(
-        "#heroCarousel .carousel-item.active"
-    );
-
-    if (!active) return;
-
-    const caption = active.querySelector(".carousel-caption");
-
-    if (!caption) return;
-
-    caption.classList.add("hero-show");
-
-}
-
-function resetAnimation() {
-
-    document
-        .querySelectorAll("#heroCarousel .carousel-caption")
-        .forEach(item => {
-
-            item.classList.remove("hero-show");
-
-        });
-
-}
-
-/* ==========================================
-   PREV NEXT WITH KEYBOARD
-========================================== */
-
-document.addEventListener("keydown", (e) => {
-
-    const hero = document.querySelector("#heroCarousel");
-
-    if (!hero) return;
-
-    const carousel = bootstrap.Carousel.getInstance(hero);
-
-    if (!carousel) return;
-
-    if (e.key === "ArrowLeft") {
-
-        carousel.prev();
-
-    }
-
-    if (e.key === "ArrowRight") {
-
-        carousel.next();
-
-    }
-
-});
-
-/* ==========================================
-   SWIPE MOBILE
-========================================== */
-
-(function () {
-
-    const hero = document.querySelector("#heroCarousel");
-
-    if (!hero) return;
-
-    let startX = 0;
-
-    let endX = 0;
-
-    hero.addEventListener("touchstart", (e) => {
-
-        startX = e.changedTouches[0].screenX;
-
-    });
-
-    hero.addEventListener("touchend", (e) => {
-
-        endX = e.changedTouches[0].screenX;
-
-        handleSwipe();
-
-    });
-
-    function handleSwipe() {
-
-        const carousel = bootstrap.Carousel.getInstance(hero);
-
-        if (!carousel) return;
-
-        if (startX - endX > 50) {
-
-            carousel.next();
-
-        }
-
-        if (endX - startX > 50) {
-
-            carousel.prev();
-
-        }
-
-    }
-
-})();
-
-/* ==========================================
-   AUTO PLAY AFTER TAB ACTIVE
-========================================== */
-
-document.addEventListener("visibilitychange", () => {
-
-    const hero = document.querySelector("#heroCarousel");
-
-    if (!hero) return;
-
-    const carousel = bootstrap.Carousel.getInstance(hero);
-
-    if (!carousel) return;
-
-    if (document.hidden) {
+    /*=====================================
+        PAUSE ON HOVER
+    =====================================*/
+
+    heroSlider.addEventListener("mouseenter", () => {
 
         carousel.pause();
 
-    } else {
+    });
+
+    heroSlider.addEventListener("mouseleave", () => {
 
         carousel.cycle();
 
-    }
+    });
+
+    /*=====================================
+        ANIMATE CAPTION
+    =====================================*/
+
+    heroSlider.addEventListener("slide.bs.carousel", () => {
+
+        const captions = heroSlider.querySelectorAll(".carousel-caption");
+
+        captions.forEach(caption => {
+
+            caption.style.opacity = "0";
+
+            caption.style.transform = "translateY(40px)";
+
+        });
+
+    });
+
+    heroSlider.addEventListener("slid.bs.carousel", () => {
+
+        const activeCaption = heroSlider.querySelector(".carousel-item.active .carousel-caption");
+
+        if (activeCaption) {
+
+            activeCaption.style.transition = "all .7s ease";
+
+            activeCaption.style.opacity = "1";
+
+            activeCaption.style.transform = "translateY(0)";
+
+        }
+
+    });
 
 });
-
-/* ==========================================
-   CONSOLE
-========================================== */
-
-console.log("✅ slider.js loaded");
