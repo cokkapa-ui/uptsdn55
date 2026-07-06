@@ -1,69 +1,114 @@
-/* ==========================================================
-   UPT SDN 55 PINRANG
-   Website Resmi
-   ========================================================== */
+/*=========================================================
+    UPT SDN 55 PINRANG
+    Website Resmi
+=========================================================*/
+
+/*=========================================================
+    GOOGLE FONT
+=========================================================*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
 
-/* ==========================================================
-   RESET
-========================================================== */
+/*=========================================================
+    ROOT
+=========================================================*/
+
+:root{
+
+    --primary:#0F4C81;
+    --secondary:#FFC107;
+    --white:#ffffff;
+    --dark:#222222;
+    --text:#555555;
+    --bg:#F5F7FA;
+    --border:#E5E7EB;
+
+    --shadow:0 10px 30px rgba(0,0,0,.08);
+
+    --radius:16px;
+
+    --transition:.35s;
+
+}
+
+
+/*=========================================================
+    RESET
+=========================================================*/
 
 *{
+
     margin:0;
     padding:0;
     box-sizing:border-box;
+
 }
 
 html{
+
     scroll-behavior:smooth;
+
 }
 
 body{
 
     font-family:'Poppins',sans-serif;
 
-    color:#333;
+    color:var(--dark);
 
-    background:#f7f9fc;
+    background:var(--bg);
 
     overflow-x:hidden;
 
 }
 
-a{
-    text-decoration:none;
+img{
+
+    max-width:100%;
+
+    display:block;
+
 }
 
-img{
-    max-width:100%;
-    display:block;
+a{
+
+    text-decoration:none;
+
+    transition:var(--transition);
+
 }
 
 ul{
-    margin:0;
-    padding:0;
+
     list-style:none;
+
+    margin:0;
+
+    padding:0;
+
+}
+
+section{
+
+    padding:90px 0;
+
 }
 
 
-/* ==========================================================
-   CONTAINER
-========================================================== */
+/*=========================================================
+    CONTAINER
+=========================================================*/
 
 .container{
 
-    width:100%;
-
     max-width:1200px;
-
-    margin:auto;
 
 }
 
-
-/* ==========================================================
-   LOADER
-========================================================== */
+/*=========================================================
+    LOADER
+=========================================================*/
 
 #loader{
 
@@ -85,17 +130,17 @@ ul{
 
 .spinner{
 
-    width:55px;
+    width:60px;
 
-    height:55px;
+    height:60px;
+
+    border:5px solid #e5e7eb;
+
+    border-top:5px solid var(--primary);
 
     border-radius:50%;
 
-    border:5px solid #ddd;
-
-    border-top:5px solid #0f4c81;
-
-    animation:spin 1s linear infinite;
+    animation:spin .8s linear infinite;
 
 }
 
@@ -109,19 +154,20 @@ ul{
 
 }
 
-/* ==========================================================
-   TOPBAR
-========================================================== */
+
+/*=========================================================
+    TOPBAR
+=========================================================*/
 
 .topbar{
 
-    background:#0f4c81;
+    background:var(--primary);
 
     color:#ffffff;
 
-    font-size:14px;
-
     padding:10px 0;
+
+    font-size:14px;
 
 }
 
@@ -137,23 +183,13 @@ ul{
 
     align-items:center;
 
-    gap:12px;
-
-}
-
-.topbar-info li{
-
-    display:flex;
-
-    align-items:center;
-
     gap:10px;
 
 }
 
 .topbar-info i{
 
-    color:#ffd43b;
+    color:var(--secondary);
 
 }
 
@@ -163,7 +199,7 @@ ul{
 
     justify-content:flex-end;
 
-    gap:15px;
+    gap:10px;
 
 }
 
@@ -181,26 +217,24 @@ ul{
 
     display:flex;
 
-    align-items:center;
-
     justify-content:center;
 
-    transition:.3s;
+    align-items:center;
 
 }
 
 .topbar-social a:hover{
 
-    background:#ffd43b;
+    background:var(--secondary);
 
-    color:#0f4c81;
+    color:var(--primary);
 
 }
 
 
-/* ==========================================================
-   HEADER
-========================================================== */
+/*=========================================================
+    HEADER
+=========================================================*/
 
 .header{
 
@@ -208,7 +242,7 @@ ul{
 
     padding:20px 0;
 
-    box-shadow:0 5px 20px rgba(0,0,0,.05);
+    box-shadow:0 2px 15px rgba(0,0,0,.05);
 
 }
 
@@ -224,15 +258,17 @@ ul{
 
 .logo-sekolah{
 
-    width:90px;
+    width:85px;
 
 }
 
 .brand-subtitle{
 
-    display:inline-block;
+    display:block;
 
-    color:#0f4c81;
+    color:var(--primary);
+
+    font-size:14px;
 
     font-weight:600;
 
@@ -244,9 +280,9 @@ ul{
 
     font-size:34px;
 
-    font-weight:700;
+    color:var(--primary);
 
-    color:#0f4c81;
+    font-weight:700;
 
     margin-bottom:5px;
 
@@ -256,7 +292,7 @@ ul{
 
     margin:0;
 
-    color:#666;
+    color:var(--text);
 
 }
 
@@ -270,7 +306,6 @@ ul{
 
 .logo-pinrang{
 
-    width:75px;
+    width:80px;
 
 }
-
